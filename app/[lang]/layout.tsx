@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${montserrat.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${montserrat.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased scroll-smooth`}
       >
         {children}
       </body>

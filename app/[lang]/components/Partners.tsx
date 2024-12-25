@@ -11,7 +11,7 @@ function NextArrow(props: any) {
   return (
     <button
       {...props}
-      className={cn(props.className, "before:hidden", "drop-shadow-xl")}
+      className={cn(props.className, "before:hidden", "drop-shadow-md")}
     >
       <svg
         className="-translate-y-6"
@@ -34,7 +34,7 @@ function PrevArrow(props: any) {
   return (
     <button
       {...props}
-      className={cn(props.className, "before:hidden", "drop-shadow-xl")}
+      className={cn(props.className, "before:hidden", "drop-shadow-md")}
     >
       <svg
         className="-translate-y-6"
