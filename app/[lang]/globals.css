@@ -19,3 +19,14 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media (max-width: 1024px) {
+  .slick-prev {
+    left: 25px !important;
+    z-index: 10;
+  }
+  .slick-next {
+    right: 25px !important;
+    z-index: 10;
+  }
+}
