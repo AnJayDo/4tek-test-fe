@@ -27,7 +27,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={handleScrollToTop}
-      className="fixed z-10 h-[67px] w-[67px] right-20 bottom-10 rounded-full bg-white drop-shadow-lg flex justify-center items-center"
+      className="fixed z-50 h-[67px] w-[67px] right-2 lg:right-20 bottom-10 rounded-full bg-white drop-shadow-lg flex justify-center items-center"
     >
       <svg
         className={cn(
