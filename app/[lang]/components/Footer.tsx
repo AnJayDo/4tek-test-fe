@@ -10,7 +10,21 @@ import LocationIcon from "./icons/LocationIcon";
 import MobileIcon from "./icons/MobileIcon";
 import SubscribeEmailInput from "./SubscribeEmailInput";
 
-export default function Footer({ content }: { content: { footer: any } }) {
+export default function Footer({
+  content,
+}: {
+  content: {
+    footer: {
+      address: string;
+      address_1: string;
+      address_2: string;
+      phone: string;
+      subscribe: string;
+      subscribe_copy: string;
+      email_placeholder: string;
+    };
+  };
+}) {
   const SocialMedia = [
     {
       id: "footer-x-sm-link",

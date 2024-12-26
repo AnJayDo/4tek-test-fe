@@ -11,8 +11,17 @@ export default function Hero({
   content,
 }: {
   content: {
-    hero?: any;
-    navigations?: any;
+    hero?: {
+      title: string;
+      description: string;
+      email_placeholder: string;
+    };
+    navigations?: {
+      about_us: string;
+      games: string;
+      partners: string;
+      contact: string;
+    };
     clock: {
       days: string;
       hours: string;
@@ -81,11 +90,11 @@ export default function Hero({
         </h1>
         <Countdown date={Date.now() + 2658011000} renderer={renderer} />
         <p className="text-center w-full max-w-[560px] z-10 mt-10 lg:mt-20 font-montserrat text-[18px]">
-          {content.hero.description}
+          {content?.hero?.description}
         </p>
         <div className="mt-4 w-full max-w-[560px] z-10">
           <SubscribeEmailInput
-            placeholder={content.hero.email_placeholder}
+            placeholder={content?.hero?.email_placeholder}
             theme={"white"}
           />
         </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { RefObject, useRef, useState } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import CheckIcon from "./icons/CheckIcon";
 import { cn } from "@/lib/utils";
@@ -15,7 +15,12 @@ export default function Header({
   lang,
 }: {
   content: {
-    navigations: any;
+    navigations: {
+      about_us: string;
+      games: string;
+      partners: string;
+      contact: string;
+    };
     languages: { english: string; vietnamese: string };
   };
   lang: Locale;
@@ -46,8 +51,12 @@ export default function Header({
   const buttonRef = useRef<HTMLButtonElement>(null);
   const buttonMobileRef = useRef<HTMLButtonElement>(null);
 
-  useClickOutside(buttonRef, () => setIsOpen(false));
-  useClickOutside(buttonMobileRef, () => setIsOpenMobileLang(false));
+  useClickOutside(buttonRef as RefObject<HTMLButtonElement>, () =>
+    setIsOpen(false)
+  );
+  useClickOutside(buttonMobileRef as RefObject<HTMLButtonElement>, () =>
+    setIsOpenMobileLang(false)
+  );
 
   const changeLanguage = (locale: string) => {
     router.push(`/${locale}`);
