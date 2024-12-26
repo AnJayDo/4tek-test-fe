@@ -17,33 +17,38 @@ export default function AboutUs({
   };
 }) {
   return (
-    <div className="w-full flex flex-col justify-center items-center pt-[128px] gap-[128px]">
-      <div className="grid grid-cols-2 gap-10 w-full max-w-[1160px]">
-        <div className="flex flex-col w-full gap-10">
-          <h1 className="text-[60px] font-black font-playfair text-black">
+    <div
+      id="about-us"
+      className="w-full flex flex-col justify-center items-center pt-[128px] gap-[128px]"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-[1160px]">
+        <div className="flex flex-col w-full gap-10 px-4 lg:px-0">
+          <h1 className="text-[40px] lg:text-[60px] font-black font-playfair text-black">
             {content.about.about_us}
           </h1>
           <p className="w-full max-w-[860px] font-montserrat text-[14px] text-[#757575]">
             {content.about.description}
           </p>
-          <div className="flex flex-col gap-0 mt-auto mb-0">
-            <div className="text-[80px] font-bold font-montserrat text-[#079BEE]">
-              600<span className="text-[40px]">M</span>+
+          <div className="grid grid-cols-2 lg:flex lg:flex-col w-full gap-10">
+            <div className="flex flex-col gap-0 mt-auto mb-0">
+              <div className="text-[44px] lg:text-[80px] font-bold font-montserrat text-[#079BEE]">
+                600<span className="text-[20px] lg:text-[40px]">M</span>+
+              </div>
+              <p className="text-black font-montserrat font-bold text-2xl">
+                {content.about.players}
+              </p>
             </div>
-            <p className="text-black font-montserrat font-bold text-2xl">
-              {content.about.players}
-            </p>
-          </div>
-          <div className="flex flex-col gap-0">
-            <div className="text-[80px] font-bold font-montserrat text-[#079BEE]">
-              135+
+            <div className="flex flex-col gap-0">
+              <div className="text-[44px] lg:text-[80px] font-bold font-montserrat text-[#079BEE]">
+                135+
+              </div>
+              <p className="text-black font-montserrat font-bold text-2xl">
+                {content.about.games}
+              </p>
             </div>
-            <p className="text-black font-montserrat font-bold text-2xl">
-              {content.about.games}
-            </p>
           </div>
         </div>
-        <div className="w-full flex flex-col justify-center items-center gap-10 px-[75px] py-[113px] bg-[#EEEEEE]">
+        <div className="w-full flex flex-col justify-center items-center gap-10 px-4 lg:px-[75px] py-10 lg:py-[113px] bg-[#EEEEEE]">
           {content.about.features.map((feature) => (
             <div className="flex w-full gap-6" key={feature.id}>
               <div className="h-[50px] min-w-[50px] rounded-full bg-[#E3FCFF] flex justify-center items-center">
@@ -76,7 +81,7 @@ export default function AboutUs({
           alt="Witch image"
         />
         <Image
-          className="w-full -mt-[100px] z-0"
+          className="w-full mg:-mt-[100px] z-0"
           width={1160}
           height={428}
           src={"/images/pin-map.png"}

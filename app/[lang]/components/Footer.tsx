@@ -29,7 +29,10 @@ export default function Footer({ content }: { content: { footer: any } }) {
     },
   ];
   return (
-    <footer className="flex flex-col w-full h-auto font-montserrat text-white">
+    <footer
+      id="contact"
+      className="flex flex-col w-full h-auto font-montserrat text-white"
+    >
       <div
         className={cn(
           "w-full flex flex-wrap bg-[url('/images/footer-bg.jpeg')] bg-cover bg-center bg-no-repeat min-h-[466px] relative",
@@ -37,10 +40,10 @@ export default function Footer({ content }: { content: { footer: any } }) {
           "after:flex after:absolute after:z-0 after:w-full after:h-full after:top-0 after:left-0 after:from-[#000AFF] after:to-black/0 after:bg-gradient-to-b after:to-[100%] after:opacity-50"
         )}
       >
-        <div className="max-w-[1460px] w-full flex gap-10 mx-auto py-[104px] z-10">
-          <div className="flex flex-col gap-10 mr-auto ml-0">
+        <div className="max-w-[1460px] w-full flex-col lg:flex-row px-4 lg:px-0 flex gap-10 mx-auto py-10 lg:py-[104px] z-10">
+          <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start lg:w-max w-full gap-10 mr-auto ml-0">
             <Logo />
-            <div className="flex gap-10">
+            <div className="flex gap-5 lg:gap-10">
               {SocialMedia.map((sm) => (
                 <Link
                   key={sm.id}
@@ -53,7 +56,7 @@ export default function Footer({ content }: { content: { footer: any } }) {
               ))}
             </div>
           </div>
-          <div className="w-[410px] flex flex-col gap-10">
+          <div className="w-full lg:w-[410px] flex flex-col gap-10">
             <div className="text-2xl">
               <strong>{content?.footer?.address}</strong>
             </div>
@@ -76,7 +79,7 @@ export default function Footer({ content }: { content: { footer: any } }) {
               </div>
             </div>
           </div>
-          <div className="w-[410px] flex flex-col gap-10">
+          <div className="w-full lg:w-[410px] flex flex-col gap-10">
             <div className="text-2xl">
               <strong>{content?.footer?.subscribe}</strong>
             </div>

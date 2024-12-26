@@ -86,10 +86,13 @@ export default function Games({
     },
   ];
   return (
-    <section className="flex flex-col w-full h-auto font-montserratbg-[#F6F6F6] py-[128px]">
+    <section
+      id="games"
+      className="flex flex-col w-full h-auto font-montserratbg-[#F6F6F6] py-[128px]"
+    >
       <div className={cn("w-full flex")}>
         <div className="max-w-[1460px] w-full flex flex-col gap-4 mx-auto z-10 mb-16">
-          <h1 className="text-[60px] font-black font-playfair text-black mx-auto">
+          <h1 className="text-[40px] lg:text-[60px] font-black font-playfair text-black mx-auto">
             {content.games.title}
           </h1>
           <p className="mx-auto w-full max-w-[860px] text-center font-montserrat text-[14px] text-[#757575]">
@@ -97,11 +100,11 @@ export default function Games({
           </p>
         </div>
       </div>
-      <div className="grid gap-8 grid-cols-2 lg:grid-cols-4 pb-20 px-20">
+      <div className="grid gap-3 lg:gap-8 grid-cols-2 lg:grid-cols-4 pb-8 lg:pb-20 px-4 lg:px-20">
         {[0, 1, 2, 3].map((col, idx) => (
           <div
             className={cn(
-              "flex flex-col gap-8",
+              "flex flex-col gap-3 lg:gap-8",
               idx % 2 === 1
                 ? "lg:translate-y-20 row-start-2 lg:row-start-auto"
                 : "lg:translate-y-0",
@@ -113,19 +116,19 @@ export default function Games({
               <div
                 key={"game-card-" + game.id}
                 className={cn(
-                  "relative w-full aspect-[41/56] flex justify-center items-center rounded-[10px] overflow-hidden drop-shadow-md"
+                  "relative w-full aspect-[164/268] lg:aspect-[41/56] flex justify-center items-center rounded-[10px] overflow-hidden drop-shadow-md"
                 )}
               >
                 <div
                   className={cn(
-                    "z-10 w-full aspect-[41/56] top-0 left-0 absolute flex flex-col items-start justify-end px-8 py-8 font-montserrat text-white",
+                    "z-10 w-full aspect-[164/268] lg:aspect-[41/56] top-0 left-0 absolute flex flex-col items-start justify-end px-4 lg:px-8 py-4 lg:py-8 font-montserrat text-white",
                     "bg-gradient-to-t from-[#0009E180] to-[#00000000] to-[50%]"
                   )}
                 >
-                  <h2 className="font-bold text-[48px] leading-[60px]">
+                  <h2 className="font-bold text-2xl lg:text-[48px] leading-[30px] lg:leading-[60px]">
                     {game.title}
                   </h2>
-                  <p className="text-[14px] leading-[20px]">
+                  <p className="text-[12px] lg:text-[14px] leading-[15px] lg:leading-[20px]">
                     {game.description}
                   </p>
                 </div>

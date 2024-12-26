@@ -106,17 +106,20 @@ export default function Partners({ content }: { content: { partners?: any } }) {
     ],
   };
   return (
-    <section className="flex flex-col w-full h-auto font-montserrat">
+    <section
+      id="partners"
+      className="flex flex-col w-full h-auto font-montserrat"
+    >
       <div className={cn("w-full flex bg-[#F6F6F6]")}>
-        <div className="max-w-[1460px] w-full flex flex-col gap-20 mx-auto py-[120px] z-10">
-          <h1 className="text-[60px] font-black font-playfair text-black mx-auto">
+        <div className="max-w-[1460px] w-full flex flex-col gap-10 lg:gap-20 mx-auto py-10 lg:py-[120px] z-10">
+          <h1 className="text-[40px] lg:text-[60px] font-black font-playfair text-black mx-auto">
             {content?.partners}
           </h1>
           <Slider {...settings}>
             {partnerList.map((partner) => (
               <div
                 key={partner.id}
-                className="aspect-[26/10] lg:aspect-[32/10] xl:aspect-[34/10] px-1.5 lg:px-[20px] xl:px-[40px] flex justify-center items-center"
+                className="aspect-[26/10] lg:aspect-[32/10] xl:aspect-[34/10] px-1.5 lg:px-[20px] xl:px-[40px] h-[72px] lg:w-auto lg:h-[100px] flex justify-center items-center"
               >
                 <Image
                   src={partner.src}
