@@ -5,6 +5,7 @@ import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
+import Games from "./components/Games";
 
 export default async function Home(props: {
   params: Promise<{ lang: Locale }>;
@@ -16,6 +17,7 @@ export default async function Home(props: {
     <div className="flex flex-col w-full bg-white relative">
       <Header content={dictionary} lang={lang} />
       <Hero content={dictionary} />
+      <Games content={dictionary} />
       <Partners content={dictionary} />
       <Footer content={dictionary} />
     </div>
