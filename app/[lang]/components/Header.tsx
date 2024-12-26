@@ -292,6 +292,7 @@ export default function Header({
                   ? "border-b border-b-[#EEEEEE]"
                   : ""
               )}
+              onClick={() => setTimeout(() => setIsOpenMobileNav(false), 100)}
               key={link.href.replace("#", "header-link-mobile-")}
               href={link.href}
             >
