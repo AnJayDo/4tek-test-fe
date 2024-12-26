@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Footer from "./components/Footer";
 import Partners from "./components/Partners";
 import { Locale } from "@/i18n-config";
@@ -6,6 +5,8 @@ import { getDictionary } from "@/get-dictionary";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Games from "./components/Games";
+import AboutUs from "./components/AboutUs";
+import BackToTop from "./components/BackToTop";
 
 export default async function Home(props: {
   params: Promise<{ lang: Locale }>;
@@ -15,8 +16,10 @@ export default async function Home(props: {
   const dictionary = await getDictionary(lang);
   return (
     <div className="flex flex-col w-full bg-white relative">
+      <BackToTop />
       <Header content={dictionary} lang={lang} />
       <Hero content={dictionary} />
+      <AboutUs content={dictionary} />
       <Games content={dictionary} />
       <Partners content={dictionary} />
       <Footer content={dictionary} />
