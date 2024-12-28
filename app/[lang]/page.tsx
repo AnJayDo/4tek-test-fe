@@ -1,12 +1,12 @@
-import Footer from "./components/Footer";
-import Partners from "./components/Partners";
+import Footer from "../components/Footer";
+import Partners from "../components/Partners";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
-import Hero from "./components/Hero";
-import Header from "./components/Header";
-import Games from "./components/Games";
-import AboutUs from "./components/AboutUs";
-import BackToTop from "./components/BackToTop";
+import Hero from "../components/Hero";
+import Header from "../components/Header";
+import Games from "../components/Games";
+import AboutUs from "../components/AboutUs";
+import BackToTop from "../components/BackToTop";
 
 export default async function Home(props: {
   params: Promise<{ lang: Locale }>;

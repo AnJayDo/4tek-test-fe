@@ -1,4 +1,8 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { FormEvent, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function SubscribeEmailInput({
   placeholder,
@@ -7,8 +11,29 @@ export default function SubscribeEmailInput({
   placeholder?: string;
   theme?: "black" | "white";
 }) {
+  const [value, setValue] = useState("");
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    formData.append("email", value);
+    const response = await fetch("/api/send", {
+      method: "POST",
+      body: formData,
+    });
+
+    // Handle response if necessary
+    const data = await response.json();
+    if (data?.id) {
+      toast.success("Subscribe successfully!");
+    }
+    setValue("");
+  }
+
   return (
-    <div
+    <form
+      onSubmit={onSubmit}
       className={cn(
         "rounded-lg border border-white h-14 flex justify-between",
         theme === "white" ? "bg-white" : ""
@@ -17,13 +42,18 @@ export default function SubscribeEmailInput({
       <input
         id="subscribe-email"
         type="email"
+        onChange={(e) => setValue(e.target.value)}
+        value={value}
         placeholder={placeholder}
         className={cn(
           "text-[14px] bg-transparent text-white placeholder:text-white w-full pl-[14px] focus:ring-transparent focus:outline-none",
           theme === "white" ? "text-black placeholder:text-[#545454]" : ""
         )}
       ></input>
-      <button className="h-14 w-14 flex justify-center items-center rounded-lg bg-transparent focus:ring-transparent">
+      <button
+        type="submit"
+        className="h-14 w-14 flex justify-center items-center rounded-lg bg-transparent focus:ring-transparent"
+      >
         <svg
           width="24"
           height="24"
@@ -41,6 +71,6 @@ export default function SubscribeEmailInput({
           />
         </svg>
       </button>
-    </div>
+    </form>
   );
 }
