@@ -121,11 +121,11 @@ export default function Games({
               >
                 <div
                   className={cn(
-                    "z-10 w-full aspect-[164/268] lg:aspect-[41/56] top-0 left-0 absolute flex flex-col items-start justify-end px-4 lg:px-8 py-4 lg:py-8 font-montserrat text-white",
+                    "z-10 w-full aspect-[164/268] lg:aspect-[41/56] top-0 left-0 absolute flex flex-col items-start justify-end px-4 xl:px-8 py-4 xl:py-8 font-montserrat text-white",
                     "bg-gradient-to-t from-[#0009E180] to-[#00000000] to-[50%]"
                   )}
                 >
-                  <h2 className="font-bold text-2xl lg:text-[48px] leading-[30px] lg:leading-[60px]">
+                  <h2 className="font-bold text-2xl xl:text-[48px] leading-[30px] lg:leading-[60px]">
                     {game.title}
                   </h2>
                   <p className="text-[12px] lg:text-[14px] leading-[15px] lg:leading-[20px]">
@@ -135,7 +135,7 @@ export default function Games({
                 <Image
                   height={560}
                   width={410}
-                  className="object-fit w-full h-full z-0"
+                  className="object-fit w-auto max-w-none lg:w-full h-full z-0"
                   src={game.src}
                   alt={game.title + " image"}
                 />

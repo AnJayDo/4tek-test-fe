@@ -83,13 +83,13 @@ export default function Hero({
   };
 
   return (
-    <div className="w-full bg-[url(/images/mobile-hero-bg.png)] lg:bg-[url(/images/hero-bg.png)] bg-cover min-h-screen bg-bottom flex flex-col relative justify-center items-center">
+    <div className="w-full bg-[url(/images/mobile-hero-bg.png)] lg:bg-[url(/images/hero-bg-v2.png)] bg-cover min-h-screen bg-bottom flex flex-col relative justify-center items-center">
       <div className="w-full max-w-[1460px] px-4 lg:px-0 flex flex-col justify-center items-center relative mx-auto gap-4 lg:min-h-screen">
         <h1 className="mt-[172px] lg:mt-0 font-playfair text-[40px] lg:text-[80px] font-black text-white leading-normal z-10 text-center">
           {content?.hero?.title}
         </h1>
         <Countdown date={Date.now() + 2658011000} renderer={renderer} />
-        <p className="text-center w-full max-w-[560px] z-10 mt-10 lg:mt-20 font-montserrat text-[18px]">
+        <p className="text-center w-full text-white max-w-[560px] z-10 mt-10 lg:mt-20 font-montserrat text-[18px]">
           {content?.hero?.description}
         </p>
         <div className="mt-4 w-full max-w-[560px] z-10">
@@ -98,13 +98,13 @@ export default function Hero({
             theme={"white"}
           />
         </div>
-        <Image
+        {/* <Image
           className="hidden lg:flex absolute left-1/2 top-1/2 w-2/3 h-auto blur-lg -translate-x-1/2 -translate-y-1/2 backdrop-blur-sm fill-[#210544] z-[1]"
           height={1000}
           width={1000}
           src={"/images/bg-blur.png"}
           alt={"Background blur"}
-        />
+        /> */}
 
         <Image
           className="flex lg:absolute left-0 bottom-0 w-full scale-100 -translate-y-10 translate-x-14 lg:scale-100 lg:w-[900px] lg:-translate-x-40"

@@ -15,7 +15,7 @@ export default async function Home(props: {
 
   const dictionary = await getDictionary(lang);
   return (
-    <div className="flex flex-col w-full bg-white relative">
+    <div className="flex flex-col w-full bg-white relative max-w-[100vw] overflow-x-hidden">
       <BackToTop />
       <Header content={dictionary} lang={lang} />
       <Hero content={dictionary} />
